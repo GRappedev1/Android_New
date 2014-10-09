@@ -17,23 +17,36 @@ public class HeaderLayout {
 
 	public HeaderLayout(Context context) {
 		mLeftIb = (ImageButton) ((Activity) context).findViewById(R.id.left_ib);
-		mLeftExtraIb = (ImageButton) ((Activity) context).findViewById(R.id.left_extra_ib);
-		mRightIb = (ImageButton) ((Activity) context).findViewById(R.id.right_ib);
+		mLeftExtraIb = (ImageButton) ((Activity) context)
+				.findViewById(R.id.left_extra_ib);
+		mRightIb = (ImageButton) ((Activity) context)
+				.findViewById(R.id.right_ib);
 
 		mTitleTv = (TextView) ((Activity) context).findViewById(R.id.title_tv);
 		mRightTv = (TextView) ((Activity) context).findViewById(R.id.right_tv);
 	}
 
 	public void setHeaderITT(int leftResId, int titleResId, int rightResId) {
-		mLeftIb.setImageResource(leftResId);
+		if (leftResId == 0) {
+			mLeftIb.setVisibility(View.INVISIBLE);
+		} else {
+			mLeftIb.setVisibility(View.VISIBLE);
+			mLeftIb.setImageResource(leftResId);
+		}
 		mTitleTv.setText(titleResId);
-		mRightTv.setText(rightResId);
+		if (rightResId == 0) {
+			mRightTv.setVisibility(View.INVISIBLE);
+		} else {
+			mRightTv.setVisibility(View.VISIBLE);
+			mRightTv.setText(rightResId);
+		}
 
 		mLeftExtraIb.setVisibility(View.GONE);
 		mRightIb.setVisibility(View.GONE);
 	}
 
-	public void setHeaderIITI(int leftResId, int leftExtraResId, int titleResId, int rightResId) {
+	public void setHeaderIITI(int leftResId, int leftExtraResId,
+			int titleResId, int rightResId) {
 		mLeftIb.setImageResource(leftResId);
 		mLeftExtraIb.setImageResource(leftExtraResId);
 		mTitleTv.setText(titleResId);
@@ -42,7 +55,8 @@ public class HeaderLayout {
 		mRightTv.setVisibility(View.GONE);
 	}
 
-	public void setListener(OnClickListener left, OnClickListener leftExtra, OnClickListener right) {
+	public void setListener(OnClickListener left, OnClickListener leftExtra,
+			OnClickListener right) {
 		mLeftIb.setOnClickListener(left);
 		mLeftExtraIb.setOnClickListener(leftExtra);
 		mRightIb.setOnClickListener(right);
@@ -53,12 +67,12 @@ public class HeaderLayout {
 	public void setHeaderHLVR(int leftResId, int titleResId, int rightResId) {
 		mTitleTv.setText(titleResId);
 		mRightTv.setText(rightResId);
-	
+
 		mLeftIb.setVisibility(View.GONE);
 		mLeftExtraIb.setVisibility(View.GONE);
 		mRightIb.setVisibility(View.GONE);
 	}
-	
+
 	public void setTextColor(int color) {
 		mRightTv.setTextColor(color);
 		mTextColor = color;
@@ -67,8 +81,8 @@ public class HeaderLayout {
 	public int getTextColor() {
 		return mTextColor;
 	}
-	
-	public ImageView getLeftView(){
+
+	public ImageView getLeftView() {
 		return mLeftIb;
 	}
 }

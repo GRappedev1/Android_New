@@ -12,9 +12,22 @@
     <color name="LtBlue">#0064b4</color>
     <color name="Focussed">#336699</color>
     <color name="Selected">#003366</color>
-	<color name="LightBlack">#616161</color>
+    <color name="LightBlack">#616161</color>
     <color name="dashB_bg">#222222</color>
     <color name="dashB_line">#3a3a3a</color>
-	<color name="dashB_textGrey">#999999</color>
-    
+    <color name="dashB_textGrey">#999999</color>
+    <color name="overlay">#66000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="grey">#333333</color>
+    <color name="lt_grey">#555555</color>
+    <color name="lt_green">#5fcab2</color>
+    <color name="lt_red">#eb625e</color>
+    <color name="ltst_grey">#f1f1f1</color>
+    <color name="fb_blue">#34495d</color>
+    <color name="separator">#cecece</color>
+    <color name="background">#F1F1F1</color>
+    <color name="selectmenu">#d9d9d9</color>
+    <color name="white">#ffffffff</color>
+    <color name="list_overlay">#33000000</color>
+
 </resources>

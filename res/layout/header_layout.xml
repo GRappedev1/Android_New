@@ -9,6 +9,8 @@
         android:id="@+id/left_ib"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="0dp"
         android:background="@color/Transparent"
         android:contentDescription="@string/app_name"
         android:paddingLeft="2dp"
@@ -41,6 +43,7 @@
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
         android:gravity="center"
+        android:paddingLeft="0dp"
         android:paddingRight="6dp"
         android:text="@string/app_name"
         android:textColor="@drawable/selector_white_text" />
@@ -53,6 +56,7 @@
         android:background="@color/Transparent"
         android:contentDescription="@string/app_name"
         android:padding="10dp"
+        android:paddingLeft="0dp"
         android:paddingRight="2dp"
         android:src="@drawable/icon_32_grey_search" />
 
