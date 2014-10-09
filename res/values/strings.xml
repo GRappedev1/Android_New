@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Doctor</string>
+    <string name="action_settings">Settings</string>
+    <string name="Hello_world">Hello world!</string>
+    <string name="loading">Loading...</string>
+
+    <!-- Header -->
+    <string name="Welcome">Welcome</string>
+    <string name="Signup">Signup</string>
+    <string name="Done">Done</string>
+    <string name="Forgot_Password">Forgot Password</string>
+    <string name="Reset_Password">Reset Password</string>
+    <string name="Confirm_Password">Confirm Password</string>
+    <string name="Reset">Reset</string>
+    <string name="Empty_String">""</string>
+
+     <!-- DashBoard MenuActivity -->
+     
+     
+     <string name="Dashboard">Dashboard</string>
+     <string name="Add_Patient">Add Patient</string>
+     <string name="Teams">Teams</string>
+     <string name="Tasks">Tasks</string>
+     <string name="Badges">Badges</string>
+     <string name="Account_Settings">Account Settings</string>
+     <string name="Edit_Profile">Edit_Profile</string>
+     <string name="Switch_Account">Switch Account</string>
+     <string name="Logout">Logout</string>
+     <string name="on_call">On Call</string>
+     <string name="Surgery">Surgery</string>
+    
+     <string name="Status">Status</string>
+     <string name="Department">Department</string>
+    
+     <!-- Mobile Dialog -->
+   
+    <string name="code_sent">Code Sent</string>
+    
+    <!-- Login Page -->
+    
+    <string name="Login_with_blue">Login with Blue Button</string>
+    <string name="Login_with_health">Login with Health Vault</string>
+    
+    <string name="Username">Username</string>
+    <string name="Password">Password</string>
+    <string name="Log_In">Log In</string>
+    <string name="Login_with_Doximity">Login with Doximity</string>
+    <string name="Need_An_Account">Need An Account?</string>
+    <string name="Signup_Now">Signup Now</string>
+   	<string name="Please_enter_userid">Please enter username</string>
+    <string name="Invalid_userid">Invalid userid, Please enter valid userid.</string>
+    <string name="Please_enter_password">Please enter password</string>
+    <string name="Please_enter_username">Please enter username</string>
+    <string name="Invalid_password">Invalid password, Please enter valid password.</string>
+ 	<string name="Please_enter_verification">Please enter verification code.</string>
+ 	
+ 	<!-- GPS Dialog -->
+ 	<string name="yes">Yes</string>
+ 	<string name="no">No</string>
+ 	 <string name="check_gps">Check GPS</string>
+    <string name="your_GPS_seems_to_be_disabled">Your GPS seems to be disabled, do you want to enable it?</string>
+ 	
+ 	
+ 	
+ 	<!-- Welcome Page -->
+ 	<string name="Watch_demo">Watch Demo</string>
+    <string name="Invite_Friends">Invite Friends</string>
+    
+    <string name="welcome_user_first">Welcome</string>
+    <string name="welcome_user_second">we are waiting for a hospital to </string>
+    <string name="welcome_user_third">add you to their list.</string>
+    
+ 	
+    <!-- Signup Page -->
+    <string name="First_Name">First Name</string>
+    <string name="Last_Name">Last Name</string>
+    <string name="Country_Code">Country Code</string>
+    <string name="Mobile">Mobile</string>
+    <string name="Email">Email</string>
+    
+    <string name="Add_Picture">Add Picture</string>
+    <string name="First_Name_Invalid">First Name - Invalid</string>
+    <string name="Email_Already_Registered">Email- Already Registered</string>
+    <string name="Search">Search</string>
+    <string name="Verify_Mobile">Verify Mobile</string>
+    <string name="Verification_Code">Verification Code</string>
+    <string name="Edit_Number">Edit Number</string>
+    <string name="Submit">Submit</string>
+    <string name="Resend_Code">Resend Code</string>
+    <string name="Edit_Mobile_Number">Edit Mobile Number</string>
+    <string name="Mobile_Already_in_use">Mobile - Already in use</string>
+    <string name="Cancel">Cancel</string>
+    <string name="Save">Save</string>
+    <string name="Ok">OK</string>
+    <string name="Mobile_Number_Already">Mobile Number Already in use</string>
+    <string name="We_sent_a_verification">We sent a verification code to</string>
+    <string name="Please_enter_the_code">Please enter the code below to complete your registration</string>
+    <string name="has_already_been_verified">has already been verified by another member.Please use another mobile number.</string>
+
+    <!-- Validations -->
+    
+    <string name="Please_Enter_Username">Please Enter the Username</string>
+    <string name="Please_Enter_Lastname">Please Enter the Lastname</string>
+    <string name="Please_Enter_Country">Please Enter the Country Code</string>
+    <string name="Please_Enter_Mobile">Please Enter the Mobile Number</string>
+    <string name="Please_enter_the_email">Please enter the email address</string>
+    <string name="Please_enter_valid_email">Please enter the valid email address</string>
+    
+    <string name="Email_Invalid">Email - Invalid</string>
+    <string name="Mobile_Invalid">Mobile number - Invalid</string>
+    <string name="password_invalid">Password should be of mininum 8 character</string>
+    <string name="password_Invalid">Password - Invalid</string>
+    <string name="password_does_not">Password does not match</string>
+    
+    <!-- Password must contain uppercase, lowercase and numerical characters. -->
+    
+    
+      <!-- Confirmation Screen -->    
+    <string name="How_would_you">How would you like to set your picture?</string>
+    <string name="Take_Picture">Take Picture</string>
+    <string name="Load_from_library">Load from Library</string>
+    
+    
+    <!-- Forgot Password -->
+    <string name="To_reset_your_password">To reset your password, please enter your email address</string>
+    <string name="Email_Address">Email Address</string>
+    <string name="Password_Reset">Password Reset</string>
+    <string name="Please_check_your_email">Please check your email for instructions.</string>
+    <string name="Temporary_Password">Temporary Password</string>
+    <string name="New_Password">New Password</string>
+    <string name="Retype_Password">Retype Password</string>
+
+    <!-- Crash app dialogue box -->
+    <string name="Ooops">Ooops#0021</string>
+    <string name="Something_went_wrong">Something went wrong.A report has been sent to our engineers and they will fix it soon.</string>
+
+    <!-- Error Messages-->
+    <string name="Network_erro">Network Error</string>
+    <string name="No_internet_connection">No internet connection found</string>
+    
+    
+    
+</resources>

@@ -1,0 +1,151 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:minWidth="290dp"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/Wrap.Text.DarkGrey"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="@string/Edit_Mobile_Number"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="15dp" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:orientation="vertical" >
+
+                <!--
+                     <TextView
+                    style="@style/WrapSmallMid.Text.LtBlue"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="15dp"
+                    android:text="@string/Country_Code"
+                    android:textSize="12sp" />
+                -->
+
+                <com.vinfotech.widget.FloatLabel
+                    android:id="@+id/country_code_et"
+                    style="@style/Wrap.EditText.LtGrey"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/selector_et_ltgrey"
+                    android:hint="@string/Country_Code"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true" />
+                
+               
+
+                <!--
+                <EditText
+                    android:id="@+id/country_code_et"
+                    style="@style/Wrap.EditText.LtGrey"
+                    android:layout_width="match_parent"
+                    android:hint="+91"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:typeface="normal" >
+ 
+                    <requestFocus />
+                </EditText>
+                -->
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_grey_bottom_curved_normal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical" >
+
+                <!--
+                     <TextView
+                    style="@style/WrapSmallMid"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="@string/Mobile_Already_in_use"
+                    android:textSize="12sp" />
+                -->
+
+
+                <!--
+                     <EditText
+                    android:id="@+id/mobile_number_et"
+                    style="@style/Wrap.EditText.LtGrey"
+                    android:layout_width="match_parent"
+                    android:hint="8103802717"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:typeface="normal" />
+                -->
+
+                <com.vinfotech.widget.FloatLabel
+                    android:id="@+id/mobile_number_et"
+                    style="@style/Wrap.EditText.LtGrey"
+                    android:layout_width="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/selector_et_ltgrey"
+                    android:hint="@string/Mobile"
+                    android:inputType="phone"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true" />
+                
+                <requestFocus />
+                
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/cancel_btn"
+                style="@style/Wrap.Button.LtGrey"
+                android:layout_width="0dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:text="@string/Cancel" />
+
+            <Button
+                android:id="@+id/save_btn"
+                style="@style/Wrap.Button.LtGrey"
+                android:layout_width="0dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:text="@string/Save"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

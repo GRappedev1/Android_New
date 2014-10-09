@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_bg"
+    android:minWidth="250dp" >
+
+    <TextView
+        android:id="@+id/textView1"
+        style="@style/Wrap.Text.DarkGrey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:text="@string/your_GPS_seems_to_be_disabled" />
+    
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+         <Button
+             android:id="@+id/yesGps_btn"
+             style="@style/Wrap.Button.LtGrey"
+             android:layout_width="0dp"
+             android:layout_marginRight="1dp"
+             android:layout_marginTop="15dp"
+             android:layout_weight="1"
+             android:text="@string/yes" />
+        
+            <Button
+                android:id="@+id/noGps_btn"
+                style="@style/Wrap.Button.LtGrey"
+                android:layout_width="0dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:text="@string/no" />
+
+        </LinearLayout>
+    
+</LinearLayout>

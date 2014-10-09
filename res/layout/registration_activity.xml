@@ -1,0 +1,173 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/header_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp" >
+
+        <ImageView
+            android:id="@+id/user_image_registration_iv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/default_picture" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical" >
+
+            <!--
+                 <com.vinfotech.widget.FloatLabel
+                android:id="@+id/checking_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:inputType="textPersonName"
+                android:singleLine="true" />
+            -->
+
+            <com.vinfotech.widget.FloatLabel
+                android:id="@+id/firstNameReg_et"
+                style="@style/Wrap.EditText.LtGrey"
+                android:background="@drawable/selector_et_ltgrey"
+                android:ems="10"
+                android:hint="Firstname"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords|textPersonName" 
+                android:singleLine="true" />
+	<requestFocus />
+            <com.vinfotech.widget.FloatLabel
+                android:id="@+id/lastname_et"
+                style="@style/Wrap.EditText.LtGrey"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Lastname"
+                android:inputType="textCapWords|textPersonName" 
+                android:imeOptions="actionDone"
+                android:singleLine="true" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical" >
+
+            <com.vinfotech.widget.FloatLabel
+                android:id="@+id/countryCode_et"
+                style="@style/Wrap.EditText.LtGrey"
+                android:background="@android:color/transparent"
+                android:cursorVisible="false"
+                android:focusableInTouchMode="false"
+                android:hint="Countrycode"
+                android:longClickable="false" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/btn_grey_bottom_curved_hover" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="2"
+            android:orientation="vertical" >
+
+            <com.vinfotech.widget.FloatLabel
+                android:id="@+id/mobile_et"
+                style="@style/Wrap.EditText.LtGrey"
+                android:background="@android:color/transparent"
+                android:hint="Mobile"
+                android:inputType="phone" 
+               />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/separator_line_grey" />
+
+    <com.vinfotech.widget.FloatLabel
+        android:id="@+id/emailReg_et"
+        style="@style/Wrap.EditText.LtGrey"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="Email Id"
+        android:inputType="textEmailAddress" />
+
+    <com.vinfotech.widget.FloatLabel
+        android:id="@+id/password_et"
+        style="@style/Wrap.EditText.LtGrey"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="@string/Password"
+        android:inputType="textPassword" />
+
+    <com.vinfotech.widget.FloatLabel
+        android:id="@+id/confirmPassword_et"
+        style="@style/Wrap.EditText.LtGrey"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="@string/Confirm_Password"
+        android:inputType="textPassword" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/cancelReg_btn"
+            style="@style/Wrap.Button.LtGrey"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Cancel" />
+
+        <Button
+            android:id="@+id/register_btn"
+            style="@style/Wrap.Button.LtGrey"
+            android:layout_width="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="Register" />
+    </LinearLayout>
+
+</LinearLayout>

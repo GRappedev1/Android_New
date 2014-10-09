@@ -1,0 +1,125 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:background="@color/White"
+    android:minWidth="250dp"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/Wrap.Text.DarkGrey"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="@string/Verify_Mobile"
+        android:textStyle="bold" />
+
+    <TextView
+        style="@style/WrapSmallMid.Text.LtGrey"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="@string/We_sent_a_verification"
+        android:textColor="@color/DarkGrey" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal" >
+
+        <TextView
+            android:id="@+id/countryNumVerify_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="TextView"
+            android:textColor="@color/Black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/mobileNumVerify_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="@color/Black"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/WrapSmallMid.Text.LtGrey"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="@string/Please_enter_the_code"
+        android:textColor="@color/DarkGrey" />
+    
+    <!--  <EditText
+        android:id="@+id/verification_code_et"
+        style="@style/Wrap.EditText.LtGrey"
+        android:layout_marginTop="8dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="10dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:textColor="@color/Black"
+        android:typeface="normal"
+        android:hint="@string/Verification_Code" /> -->
+        
+        
+       <com.vinfotech.widget.FloatLabel
+        android:id="@+id/verification_code_et"
+        style="@style/Wrap.EditText.LtGrey"
+        android:layout_marginTop="8dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="10dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:textColor="@color/Black"
+        android:typeface="normal"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:hint="@string/Verification_Code" /> 
+    
+    
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/resend_btn"
+            style="@style/Wrap.Button.LtGrey"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginRight="1dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/Resend_Code" />
+
+        <Button
+            android:id="@+id/edit_number_btn"
+            style="@style/Wrap.Button.LtGrey"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:text="@string/Edit_Number" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submit_btn"
+        style="@style/Wrap.Button.LtGrey"
+        android:layout_marginTop="1dp"
+        android:text="@string/Submit"
+        android:textStyle="bold" />
+
+   
+
+    
+
+</LinearLayout>

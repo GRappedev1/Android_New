@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:background="@drawable/blue_header"
+    android:orientation="horizontal" >
+
+    <ImageButton
+        android:id="@+id/left_ib"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/Transparent"
+        android:contentDescription="@string/app_name"
+        android:paddingLeft="2dp"
+        android:paddingRight="10dp"
+        android:src="@drawable/selector_left_arrow" />
+
+    <ImageButton
+        android:id="@+id/left_extra_ib"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/left_ib"
+        android:background="@color/Transparent"
+        android:contentDescription="@string/app_name"
+        android:padding="10dp"
+        android:src="@drawable/selector_left_arrow" />
+
+    <TextView
+        android:id="@+id/title_tv"
+        style="@style/Wrap.Text.White"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="@string/app_name" />
+
+    <TextView
+        android:id="@+id/right_tv"
+        style="@style/WrapSmallMid.Text.White"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:paddingRight="6dp"
+        android:text="@string/app_name"
+        android:textColor="@drawable/selector_white_text" />
+
+    <ImageButton
+        android:id="@+id/right_ib"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:background="@color/Transparent"
+        android:contentDescription="@string/app_name"
+        android:padding="10dp"
+        android:paddingRight="2dp"
+        android:src="@drawable/icon_32_grey_search" />
+
+</RelativeLayout>

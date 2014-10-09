@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/header_layout" />
+
+    <EditText
+        android:id="@+id/search_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/grey_search_field"
+        android:drawableLeft="@drawable/icon_32_grey_search"
+        android:focusable="false"
+        android:gravity="center"
+        android:hint="@string/Search" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/LtGrey" />
+
+    <ExpandableListView
+        android:id="@+id/patient_elv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:childDivider="@android:color/transparent"
+        android:divider="@color/LtGrey"
+        android:dividerHeight="1px"
+        android:groupIndicator="@android:color/transparent" />
+
+</LinearLayout>

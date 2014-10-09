@@ -1,0 +1,92 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppBaseTheme" parent="android:Theme.Light"></style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="FullscreenTheme" parent="android:Theme.NoTitleBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@color/White</item>
+    </style>
+
+    <style name="WrapMid">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="WrapSmallMid">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Wrap.EditText.LtGrey" parent="WrapMid">
+        <item name="android:background">@drawable/selector_et_ltgrey</item>
+        <item name="android:textColor">@color/LtGrey</item>
+    </style>
+
+    <style name="Wrap.Button.LtGrey" parent="WrapMid">
+        <item name="android:background">@drawable/selector_btn_ltgrey</item>
+        <item name="android:textColor">@color/LtBlue</item>
+    </style>
+
+    <style name="Wrap.Button.Blue" parent="WrapMid">
+        <item name="android:background">@drawable/selector_btn_blue</item>
+        <item name="android:textColor">@color/White</item>
+    </style>
+
+    <style name="Wrap.Text.LtBlue" parent="WrapMid">
+        <item name="android:textColor">@color/LtBlue</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="Wrap.Text.DarkGrey" parent="WrapMid">
+        <item name="android:textColor">@color/DarkGrey</item>
+    </style>
+
+    <style name="Wrap.Text.LtGrey" parent="WrapMid">
+        <item name="android:textColor">@color/LtGrey</item>
+    </style>
+
+    <style name="WrapSmallMid.Text.LtBlue" parent="WrapSmallMid">
+        <item name="android:textColor">@color/LtBlue</item>
+    </style>
+
+    <style name="WrapSmallMid.Text.LtGrey" parent="WrapSmallMid">
+        <item name="android:textColor">@color/LtGrey</item>
+    </style>
+
+    <style name="Wrap.Text.White" parent="WrapMid">
+        <item name="android:textColor">@color/White</item>
+    </style>
+
+    <style name="WrapSmallMid.Text.White" parent="WrapSmallMid">
+        <item name="android:textColor">@color/White</item>
+    </style>
+
+    <style name="WrapMax.Text.LtBlue" parent="WrapMid">
+        <item name="android:textColor">@color/LtBlue</item>
+         <item name="android:background">@color/White</item>
+    </style>
+    
+    
+    
+    
+    
+    <!-- Animation styles -->
+    <style name="bottom_to_top_anim_style">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_down_activity</item>
+        <item name="android:activityOpenExitAnimation">@anim/nothing</item>
+        <item name="android:activityCloseEnterAnimation">@anim/nothing</item>
+        <item name="android:activityCloseExitAnimation">@anim/nothing</item>
+    </style>
+
+    <style name="BottomToTopTheme" parent="@style/FullscreenTheme">
+        <item name="android:windowAnimationStyle">@style/bottom_to_top_anim_style</item>
+    </style>
+
+</resources>

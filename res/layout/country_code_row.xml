@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingBottom="12dp"
+    android:paddingTop="12dp" >
+
+    <TextView
+        android:id="@+id/country_name_tv"
+        style="@style/Wrap.Text.DarkGrey"
+        android:layout_width="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textColor="@color/LightBlack"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/country_code_tv"
+        style="@style/Wrap.Text.DarkGrey"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:paddingRight="10dp"
+        android:textColor="@color/LightBlack"
+        android:textSize="18sp" />
+
+</RelativeLayout>

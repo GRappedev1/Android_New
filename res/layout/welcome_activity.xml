@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/header_layout" />
+
+    <ImageView
+        android:id="@+id/user_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:paddingBottom="8dp"
+        android:src="@drawable/default_picture" />
+
+    <TextView
+        android:id="@+id/user_name_tv"
+        style="@style/Wrap.Text.LtBlue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="John Smith"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/userid_tv"
+        style="@style/WrapSmallMid.Text.LtGrey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingBottom="20dp"
+        android:text="john.smith@gmail.com" />
+    
+     <TextView
+        android:id="@+id/userid_tv"
+        style="@style/WrapSmallMid.Text.LtGrey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingBottom="20dp"
+        android:text="john.smith@gmail.com" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" >
+
+        <Button
+            style="@style/Wrap.Text.White"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/selector_btn_blue"
+            android:gravity="center"
+            android:text="@string/Watch_demo"
+            android:textSize="18sp" />
+
+        <Button
+            style="@style/Wrap.Text.White"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/selector_btn_blue"
+            android:gravity="center"
+            android:text="@string/Invite_Friends"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>

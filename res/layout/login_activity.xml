@@ -1,0 +1,112 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/loginpage_ll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp" >
+
+    <ImageView
+        android:id="@+id/logo_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="60dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/logo_medlinx"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:id="@+id/container_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".9" />
+
+        <com.vinfotech.widget.FloatLabel
+            android:id="@+id/username_et"
+            style="@style/Wrap.EditText.LtGrey"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:hint="@string/Username"
+            android:imeOptions="actionNext"
+            android:singleLine="true" />
+
+        <requestFocus />
+
+        <com.vinfotech.widget.FloatLabel
+            android:id="@+id/password_et"
+            style="@style/Wrap.EditText.LtGrey"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:hint="@string/Password"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/login_btn"
+            style="@style/Wrap.Text.White"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/selector_btn_blue"
+            android:text="@string/Log_In"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/forgot_password_tv"
+            style="@style/Wrap.Text.LtBlue"
+            android:gravity="center"
+            android:paddingTop="13dp"
+            android:text="@string/Forgot_Password"
+            android:textColor="@drawable/selector_blue_text"
+            android:textSize="18sp"
+            android:typeface="normal" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".9" />
+
+        <Button
+            android:id="@+id/login_with_doximity_btn"
+            style="@style/Wrap.Text.LtBlue"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/btn_login_with_doximity"
+            android:drawableLeft="@drawable/ic_doximity"
+            android:paddingLeft="15dp"
+            android:paddingRight="40dp"
+            android:text="@string/Login_with_Doximity"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            android:paddingBottom="20dp"
+            android:paddingTop="13dp" >
+
+            <TextView
+                android:id="@+id/need_an_acc_btn"
+                style="@style/Wrap.Text.DarkGrey"
+                android:layout_width="wrap_content"
+                android:text="@string/Need_An_Account" />
+
+            <TextView
+                android:id="@+id/signup_tv"
+                style="@style/Wrap.Text.LtBlue"
+                android:paddingLeft="3dp"
+                android:text="@string/Signup_Now"
+                android:textColor="@drawable/selector_blue_text"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
