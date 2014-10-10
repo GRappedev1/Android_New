@@ -17,6 +17,7 @@ import com.vinfotech.demoapp.R;
 import com.vinfotech.handler.HeaderLayout;
 import com.vinfotech.model.DashBoard;
 import com.vinfotech.module.Notification.NotificationScreen;
+import com.vinfotech.module.Poststatus.PostStatusScreen;
 
 public class HomePageActivity extends Activity implements OnClickListener,
 		OnItemClickListener {
@@ -55,7 +56,7 @@ public class HomePageActivity extends Activity implements OnClickListener,
 		dashBoards.add(new DashBoard("Profile Screen", null, 4));
 		dashBoards.add(new DashBoard("MapScreen", null, 5));
 		dashBoards.add(new DashBoard("Notification", null, 6));
-		dashBoards.add(new DashBoard("B", null, 1));
+		dashBoards.add(new DashBoard("PostStatus", null, 7));
 		dashBoards.add(new DashBoard("C", null, 1));
 		dashBoards.add(new DashBoard("D", null, 1));
 		dashBoards.add(new DashBoard("E", null, 1));
@@ -105,6 +106,10 @@ public class HomePageActivity extends Activity implements OnClickListener,
 			break;
 		case 6:
 			intent = new Intent(HomePageActivity.this, NotificationScreen.class);
+			startActivity(intent);
+			break;
+		case 7:
+			intent = new Intent(HomePageActivity.this, PostStatusScreen.class);
 			startActivity(intent);
 			break;
 		default:
