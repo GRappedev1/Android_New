@@ -63,6 +63,18 @@
             android:name="com.vinfotech.module.Notification.NotificationScreen"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name="com.vinfotech.module.Poststatus.PostStatusScreen"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.vinfotech.module.Favourite.FavouriteScreen"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.vinfotech.module.ListSelection.SelectionListScreen"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

@@ -70,13 +70,9 @@
 
     <style name="WrapMax.Text.LtBlue" parent="WrapMid">
         <item name="android:textColor">@color/LtBlue</item>
-         <item name="android:background">@color/White</item>
+        <item name="android:background">@color/White</item>
     </style>
-    
-    
-    
-    
-    
+
     <!-- Animation styles -->
     <style name="bottom_to_top_anim_style">
         <item name="android:activityOpenEnterAnimation">@anim/slide_down_activity</item>
@@ -87,6 +83,12 @@
 
     <style name="BottomToTopTheme" parent="@style/FullscreenTheme">
         <item name="android:windowAnimationStyle">@style/bottom_to_top_anim_style</item>
+    </style>
+
+    <style name="foodRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/star_rating_bar_full</item>
+        <item name="android:minHeight">48dip</item>
+        <item name="android:maxHeight">48dip</item>
     </style>
 
 </resources>

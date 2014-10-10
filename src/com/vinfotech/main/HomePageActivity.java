@@ -16,6 +16,9 @@ import com.vinfotech.adapter.HomePageAdapter;
 import com.vinfotech.demoapp.R;
 import com.vinfotech.handler.HeaderLayout;
 import com.vinfotech.model.DashBoard;
+import com.vinfotech.module.Favourite.FavouriteScreen;
+import com.vinfotech.module.ListSelection.SelectionList;
+import com.vinfotech.module.ListSelection.SelectionListScreen;
 import com.vinfotech.module.Notification.NotificationScreen;
 import com.vinfotech.module.Poststatus.PostStatusScreen;
 
@@ -57,8 +60,8 @@ public class HomePageActivity extends Activity implements OnClickListener,
 		dashBoards.add(new DashBoard("MapScreen", null, 5));
 		dashBoards.add(new DashBoard("Notification", null, 6));
 		dashBoards.add(new DashBoard("PostStatus", null, 7));
-		dashBoards.add(new DashBoard("C", null, 1));
-		dashBoards.add(new DashBoard("D", null, 1));
+		dashBoards.add(new DashBoard("Favourite", null, 8));
+		dashBoards.add(new DashBoard("List Selection", null, 9));
 		dashBoards.add(new DashBoard("E", null, 1));
 		return dashBoards;
 	}
@@ -110,6 +113,15 @@ public class HomePageActivity extends Activity implements OnClickListener,
 			break;
 		case 7:
 			intent = new Intent(HomePageActivity.this, PostStatusScreen.class);
+			startActivity(intent);
+			break;
+		case 8:
+			intent = new Intent(HomePageActivity.this, FavouriteScreen.class);
+			startActivity(intent);
+			break;
+		case 9:
+			intent = new Intent(HomePageActivity.this,
+					SelectionListScreen.class);
 			startActivity(intent);
 			break;
 		default:

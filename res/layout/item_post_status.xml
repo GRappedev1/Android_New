@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="3dp" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingBottom="12dp"
+        android:paddingTop="12dp" >
+
+        <TextView
+            android:id="@+id/header_name"
+            style="@style/Wrap.Text.DarkGrey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="4dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Building_Details"
+            android:textColor="@color/LightBlack"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/description"
+            style="@style/Wrap.Text.DarkGrey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header_name"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+            android:textColor="@color/dashB_textGrey"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            android:typeface="serif" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="2"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/txt_likes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/icon_notification"
+            android:gravity="center_horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="0dp"
+            android:text="320" />
+
+        <TextView
+            android:id="@+id/txt_chats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/icon_logout"
+            android:gravity="center_horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="0dp"
+            android:text="320" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/dashB_textGrey" />
+
+</LinearLayout>

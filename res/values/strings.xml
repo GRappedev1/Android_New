@@ -10,6 +10,8 @@
     <string name="Welcome">Welcome</string>
     <string name="HomeScreen">HOMESCREEN</string>
     <string name="Notification">NOTIFICATION</string>
+    <string name="favourite">FAVOURITE</string>
+    <string name="postStatus">STATUSPOST</string>
     <string name="Signup">Signup</string>
     <string name="Done">Done</string>
     <string name="Forgot_Password">Forgot Password</string>

@@ -67,7 +67,7 @@ public class NotificationAdapter extends BaseAdapter {
 					false);
 			viewHolder.txtItemName = (TextView) convertView
 					.findViewById(R.id.header_name);
-			viewHolder.txtTime = (TextView) convertView.findViewById(R.id.time);
+			viewHolder.txtTime = (TextView) convertView.findViewById(R.id.description);
 			viewHolder.mImagePro = (ImageView) convertView
 					.findViewById(R.id.imageView1);
 			convertView.setTag(viewHolder);
