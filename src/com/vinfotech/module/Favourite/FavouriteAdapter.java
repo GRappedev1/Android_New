@@ -1,11 +1,8 @@
 package com.vinfotech.module.Favourite;
 
-import java.io.File;
 import java.util.ArrayList;
 
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +12,6 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.vinfotech.demoapp.R;
-import com.vinfotech.model.DashBoard;
 import com.vinfotech.server.fileutil.ImageLoader;
 import com.vinfotech.utility.Utility;
 
@@ -59,7 +55,7 @@ public class FavouriteAdapter extends BaseAdapter {
 	}
 
 	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
+	public View getView(final int position, View convertView, ViewGroup parent) {
 
 		final ViewHolder viewHolder;
 
@@ -87,7 +83,7 @@ public class FavouriteAdapter extends BaseAdapter {
 					@Override
 					public void onRatingChanged(RatingBar ratingBar,
 							float rating, boolean fromUser) {
-						// TODO Auto-generated method stub
+						dashBoardList.get(position).setmRating(rating);
 						Utility.showToast(mContext,
 								("Rating: " + String.valueOf(rating)));
 					}

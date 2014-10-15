@@ -3,7 +3,15 @@ package com.vinfotech.module.Favourite;
 public class Favourite {
 
 	private String mHeading, mImage;
-	private int mRating;
+	private float mRating;
+
+	/**
+	 * @param mRating
+	 *            the mRating to set
+	 */
+	public void setmRating(float mRating) {
+		this.mRating = mRating;
+	}
 
 	/**
 	 * @return the mHeading
@@ -15,7 +23,7 @@ public class Favourite {
 	/**
 	 * @return the mRating
 	 */
-	public int getmRating() {
+	public float getmRating() {
 		return mRating;
 	}
 
@@ -26,7 +34,7 @@ public class Favourite {
 		return mImage;
 	}
 
-	public Favourite(String mHeading, int mRating, String mImage) {
+	public Favourite(String mHeading, float mRating, String mImage) {
 		super();
 		this.mHeading = mHeading;
 		this.mRating = mRating;

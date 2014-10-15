@@ -10,8 +10,8 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.vinfotech.demoapp.R;
 import com.vinfotech.adapter.CountryCodeListAdapter;
+import com.vinfotech.demoapp.R;
 import com.vinfotech.handler.HeaderLayout;
 import com.vinfotech.handler.SearchHandler;
 import com.vinfotech.handler.SearchHandler.SearchListener;

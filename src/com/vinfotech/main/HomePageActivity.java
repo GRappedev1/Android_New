@@ -10,14 +10,13 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.vinfotech.adapter.HomePageAdapter;
 import com.vinfotech.demoapp.R;
 import com.vinfotech.handler.HeaderLayout;
 import com.vinfotech.model.DashBoard;
 import com.vinfotech.module.Favourite.FavouriteScreen;
-import com.vinfotech.module.ListSelection.SelectionList;
+import com.vinfotech.module.ImageGridView.GridModelActivity;
 import com.vinfotech.module.ListSelection.SelectionListScreen;
 import com.vinfotech.module.Notification.NotificationScreen;
 import com.vinfotech.module.Poststatus.PostStatusScreen;
@@ -62,6 +61,17 @@ public class HomePageActivity extends Activity implements OnClickListener,
 		dashBoards.add(new DashBoard("PostStatus", null, 7));
 		dashBoards.add(new DashBoard("Favourite", null, 8));
 		dashBoards.add(new DashBoard("List Selection", null, 9));
+		dashBoards.add(new DashBoard("Image Grid", null, 10));// type 0 for
+																// without
+																// tes=xt
+		dashBoards.add(new DashBoard("Image Grid Text", null, 11));// type 1
+																	// with text
+		dashBoards.add(new DashBoard("Image Grid Text Bottom", null, 12));// type
+																			// 2
+																			// with
+																			// text
+																			// on
+																			// bottom
 		dashBoards.add(new DashBoard("E", null, 1));
 		return dashBoards;
 	}
@@ -88,7 +98,7 @@ public class HomePageActivity extends Activity implements OnClickListener,
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
 		DashBoard dashBoard = (DashBoard) mListview.getItemAtPosition(position);
-		Intent intent;
+		Intent intent = null;
 		switch (dashBoard.getmIds()) {
 		case 1:
 
@@ -122,6 +132,23 @@ public class HomePageActivity extends Activity implements OnClickListener,
 		case 9:
 			intent = new Intent(HomePageActivity.this,
 					SelectionListScreen.class);
+			startActivity(intent);
+			break;
+		case 10:
+			intent = new Intent(HomePageActivity.this, GridModelActivity.class);
+			intent.putExtra("TYPE", 0);
+			startActivity(intent);
+			break;
+		case 11:
+
+			intent = new Intent(HomePageActivity.this, GridModelActivity.class);
+			intent.putExtra("TYPE", 1);
+			startActivity(intent);
+			break;
+		case 12:
+
+			intent = new Intent(HomePageActivity.this, GridModelActivity.class);
+			intent.putExtra("TYPE", 2);
 			startActivity(intent);
 			break;
 		default:

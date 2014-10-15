@@ -30,7 +30,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 import com.vinfotech.server.mime.MIME;
-import com.vinfotech.server.mime.content.AbstractContentBody;
 
 /**
  * Body part that is built using a byte array containing a file.

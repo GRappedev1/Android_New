@@ -1,11 +1,8 @@
 package com.vinfotech.module.ListSelection;
 
-import java.io.File;
 import java.util.ArrayList;
 
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.vinfotech.demoapp.R;
-import com.vinfotech.model.DashBoard;
 import com.vinfotech.server.fileutil.ImageLoader;
 
 public class SelectionListAdapter extends BaseAdapter {
@@ -70,7 +66,7 @@ public class SelectionListAdapter extends BaseAdapter {
 
 		if (convertView == null) {
 			viewHolder = new ViewHolder();
-			convertView = minflater.inflate(R.layout.item_notification, null,
+			convertView = minflater.inflate(R.layout.item_selected_list, null,
 					false);
 			viewHolder.checkBox = (CheckBox) convertView
 					.findViewById(R.id.checkBox1);
@@ -105,6 +101,21 @@ public class SelectionListAdapter extends BaseAdapter {
 		viewHolder.txtTime.setText(dashBoardList.get(position).getmTime());
 		loader.displayImage(dashBoardList.get(position).getmImage(),
 				viewHolder.mImagePro, 2);
+		convertView.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				if (dashBoardList.get(position).getIsSelected() == 0) {
+					viewHolder.checkBox.setChecked(false);
+					dashBoardList.get(position).setIsSelected(1);
+				} else {
+					viewHolder.checkBox.setChecked(true);
+					dashBoardList.get(position).setIsSelected(0);
+				}
+				notifyDataSetChanged();
+
+			}
+		});
 		return convertView;
 	}
 

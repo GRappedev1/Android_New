@@ -1,51 +1,18 @@
 package com.vinfotech.main;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
-import android.content.ActivityNotFoundException;
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.DashPathEffect;
-import android.location.Location;
-import android.location.LocationManager;
-import android.net.wifi.WifiInfo;
-import android.net.wifi.WifiManager;
-import android.os.Bundle;
 import android.os.Handler;
-import android.speech.RecognizerIntent;
-import android.text.TextUtils;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.animation.Animation;
-import android.view.animation.Animation.AnimationListener;
-import android.view.animation.AnimationUtils;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.TextView.OnEditorActionListener;
 
-import com.google.android.gcm.GCMRegistrar;
-import com.vinfotech.demoapp.R;
-import com.vinfotech.dialogs.GpsDialog;
 import com.vinfotech.dialogs.MobileEditDialog;
-import com.vinfotech.dialogs.MobileEditDialog.NumberUpdateListner;
 import com.vinfotech.main.GCMIntentService.GCMRegisterListener;
-import com.vinfotech.model.SignIn;
 import com.vinfotech.server.HTTPRequest;
-import com.vinfotech.server.HttpConnector;
 import com.vinfotech.server.HttpConnector.HttpResponseListener;
-import com.vinfotech.server.parser.SignInParser;
-import com.vinfotech.utility.DialogUtil;
-import com.vinfotech.utility.KeyboardUtil;
-import com.vinfotech.utility.Utility;
 import com.vinfotech.widget.FloatLabel;
 
 public class LoginActivity extends Activity implements OnClickListener,

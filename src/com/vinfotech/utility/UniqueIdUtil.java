@@ -9,7 +9,9 @@ import java.net.NetworkInterface;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
+
 import org.apache.http.conn.util.InetAddressUtils;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;

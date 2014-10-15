@@ -1,11 +1,8 @@
 package com.vinfotech.module.Notification;
 
-import java.io.File;
 import java.util.ArrayList;
 
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.vinfotech.demoapp.R;
-import com.vinfotech.model.DashBoard;
 import com.vinfotech.server.fileutil.ImageLoader;
 
 public class NotificationAdapter extends BaseAdapter {

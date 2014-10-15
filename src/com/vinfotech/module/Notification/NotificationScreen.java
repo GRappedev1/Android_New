@@ -10,12 +10,9 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.vinfotech.adapter.HomePageAdapter;
 import com.vinfotech.demoapp.R;
 import com.vinfotech.handler.HeaderLayout;
-import com.vinfotech.model.DashBoard;
 import com.vinfotech.utility.Utility;
 
 public class NotificationScreen extends Activity implements OnClickListener,
@@ -29,7 +26,7 @@ public class NotificationScreen extends Activity implements OnClickListener,
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.layout_notification_screenxml);
+		setContentView(R.layout.layout_notification_screen);
 		HeaderLayout headerLayout = new HeaderLayout(this);
 		headerLayout.setHeaderITT(R.drawable.icon_back, R.string.Notification,
 				0);
