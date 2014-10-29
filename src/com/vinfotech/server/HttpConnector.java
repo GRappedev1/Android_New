@@ -90,7 +90,7 @@ public class HttpConnector {
 			final ArrayList<BasicNameValuePair> extraFormData, int urlType) {
 	/*	Log.i("HttpConnector", "executeAsync - url=" + remainUrl + ", reqCode=" + reqCode + ", method=" + method + ", runInBg=" + runInBg
 				+ ", jsonData=" + jsonData + ", extraFormData=" + extraFormData);
-*/		Log.i(jsonData, jsonData);
+//*/		//Log.i(jsonData, jsonData);
 		
 		if (TYPE_NOT_CONNECTED == getConnectivityStatus(context)) {
 			

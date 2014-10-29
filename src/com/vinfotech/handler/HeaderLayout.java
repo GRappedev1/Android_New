@@ -27,19 +27,9 @@ public class HeaderLayout {
 	}
 
 	public void setHeaderITT(int leftResId, int titleResId, int rightResId) {
-		if (leftResId == 0) {
-			mLeftIb.setVisibility(View.INVISIBLE);
-		} else {
-			mLeftIb.setVisibility(View.VISIBLE);
-			mLeftIb.setImageResource(leftResId);
-		}
+		mLeftIb.setImageResource(leftResId);
 		mTitleTv.setText(titleResId);
-		if (rightResId == 0) {
-			mRightTv.setVisibility(View.INVISIBLE);
-		} else {
-			mRightTv.setVisibility(View.VISIBLE);
-			mRightTv.setText(rightResId);
-		}
+		mRightTv.setText(rightResId);
 
 		mLeftExtraIb.setVisibility(View.GONE);
 		mRightIb.setVisibility(View.GONE);

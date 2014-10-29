@@ -1,171 +1,204 @@
 package com.android.facebookslider;
 
 import android.content.Context;
-import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
+import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 
 /**
- * A HorizontalScrollView (HSV) implementation that disallows touch events (so no scrolling can be done by the user).
+ * A HorizontalScrollView (HSV) implementation that disallows touch events (so
+ * no scrolling can be done by the user).
  * 
- * This HSV MUST contain a single ViewGroup as its only child, and this ViewGroup will be used to display the children Views
- * passed in to the initViews() method.
+ * This HSV MUST contain a single ViewGroup as its only child, and this
+ * ViewGroup will be used to display the children Views passed in to the
+ * initViews() method.
  */
 public class FacebookSlideView extends HorizontalScrollView {
-    public FacebookSlideView(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-        init(context);
-    }
+	private View wrapperView;
 
-    public FacebookSlideView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init(context);
-    }
+	public FacebookSlideView(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
+		init(context);
+	}
 
-    public FacebookSlideView(Context context) {
-        super(context);
-        init(context);
-    }
+	public FacebookSlideView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		init(context);
+	}
 
-    void init(Context context) {
-        // remove the fading as the HSV looks better without it
-        setHorizontalFadingEdgeEnabled(false);
-        setVerticalFadingEdgeEnabled(false);
-    }
+	public FacebookSlideView(Context context) {
+		super(context);
+		init(context);
+	}
 
-    /**
-     * @param children
-     *            The child Views to add to parent.
-     * @param scrollToViewIdx
-     *            The index of the View to scroll to after initialisation.
-     * @param sizeCallback
-     *            A SizeCallback to interact with the HSV.
-     */
-    public void initViews(View[] children, int scrollToViewIdx, SizeCallback sizeCallback) {
-        // A ViewGroup MUST be the only child of the HSV
-        ViewGroup parent = (ViewGroup) getChildAt(0);
+	void init(Context context) {
+		// remove the fading as the HSV looks better without it
+		setHorizontalFadingEdgeEnabled(false);
+		setVerticalFadingEdgeEnabled(false);
+	}
 
-        // Add all the children, but add them invisible so that the layouts are calculated, but you can't see the Views
-        for (int i = 0; i < children.length; i++) {
-            children[i].setVisibility(View.INVISIBLE);
-            parent.addView(children[i]);
-        }
+	/**
+	 * @param children
+	 *            The child Views to add to parent.
+	 * @param scrollToViewIdx
+	 *            The index of the View to scroll to after initialisation.
+	 * @param sizeCallback
+	 *            A SizeCallback to interact with the HSV.
+	 */
+	public void initViews(View[] children, int scrollToViewIdx, SizeCallback sizeCallback) {
+		// A ViewGroup MUST be the only child of the HSV
+		ViewGroup parent = (ViewGroup) getChildAt(0);
 
-        // Add a layout listener to this HSV
-        // This listener is responsible for arranging the child views.
-        OnGlobalLayoutListener listener = new MyOnGlobalLayoutListener(parent, children, scrollToViewIdx, sizeCallback);
-        getViewTreeObserver().addOnGlobalLayoutListener(listener);
-    }
+		// Add all the children, but add them invisible so that the layouts are
+		// calculated, but you can't see the Views
 
-    @Override
-    public boolean onTouchEvent(MotionEvent ev) {
-        // Do not allow touch events.
-        return false;
-    }
+		/*
+		 * parent.addView(children[0]); parent.addView(children[1]);
+		 */
 
-    @Override
-    public boolean onInterceptTouchEvent(MotionEvent ev) {
-        // Do not allow touch events.
-        return false;
-    }
+		for (int i = 0; i < children.length; i++) {
+			if (i == 1) {
+				FrameLayout wrapperFl = new FrameLayout(parent.getContext());
+				wrapperView = new View(parent.getContext());
+				wrapperView.setLayoutParams(new FrameLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+				wrapperFl.addView(children[1]);
+				wrapperFl.addView(wrapperView);
+				children[1] = wrapperFl;
+			}
+			children[i].setVisibility(View.INVISIBLE);
+			parent.addView(children[i]);
+		}
 
-    /**
-     * An OnGlobalLayoutListener impl that passes on the call to onGlobalLayout to a SizeCallback, before removing all the Views
-     * in the HSV and adding them again with calculated widths and heights.
-     */
-    class MyOnGlobalLayoutListener implements OnGlobalLayoutListener {
-        ViewGroup parent;
-        View[] children;
-        int scrollToViewIdx;
-        int scrollToViewPos = 0;
-        SizeCallback sizeCallback;
+		// Add a layout listener to this HSV
+		// This listener is responsible for arranging the child views.
+		OnGlobalLayoutListener listener = new MyOnGlobalLayoutListener(parent, children, scrollToViewIdx, sizeCallback);
+		getViewTreeObserver().addOnGlobalLayoutListener(listener);
+	}
 
-        /**
-         * @param parent
-         *            The parent to which the child Views should be added.
-         * @param children
-         *            The child Views to add to parent.
-         * @param scrollToViewIdx
-         *            The index of the View to scroll to after initialisation.
-         * @param sizeCallback
-         *            A SizeCallback to interact with the HSV.
-         */
-        public MyOnGlobalLayoutListener(ViewGroup parent, View[] children, int scrollToViewIdx, SizeCallback sizeCallback) {
-            this.parent = parent;
-            this.children = children;
-            this.scrollToViewIdx = scrollToViewIdx;
-            this.sizeCallback = sizeCallback;
-        }
+	public View getWrapperView() {
+		return wrapperView;
+	}
 
-        @Override
-        public void onGlobalLayout() {
-            // System.out.println("onGlobalLayout");
+	@Override
+	public boolean onTouchEvent(MotionEvent ev) {
+		// Do not allow touch events.
+		return false;
+	}
 
-            final HorizontalScrollView me = FacebookSlideView.this;
+	@Override
+	public boolean onInterceptTouchEvent(MotionEvent ev) {
+		// Do not allow touch events.
+		return false;
+	}
 
-            // The listener will remove itself as a layout listener to the HSV
-            me.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+	/**
+	 * An OnGlobalLayoutListener impl that passes on the call to onGlobalLayout
+	 * to a SizeCallback, before removing all the Views in the HSV and adding
+	 * them again with calculated widths and heights.
+	 */
+	class MyOnGlobalLayoutListener implements OnGlobalLayoutListener {
+		ViewGroup parent;
+		View[] children;
+		int scrollToViewIdx;
+		int scrollToViewPos = 0;
+		SizeCallback sizeCallback;
 
-            // Allow the SizeCallback to 'see' the Views before we remove them and re-add them.
-            // This lets the SizeCallback prepare View sizes, ahead of calls to SizeCallback.getViewSize().
-            sizeCallback.onGlobalLayout();
+		/**
+		 * @param parent
+		 *            The parent to which the child Views should be added.
+		 * @param children
+		 *            The child Views to add to parent.
+		 * @param scrollToViewIdx
+		 *            The index of the View to scroll to after initialisation.
+		 * @param sizeCallback
+		 *            A SizeCallback to interact with the HSV.
+		 */
+		public MyOnGlobalLayoutListener(ViewGroup parent, View[] children, int scrollToViewIdx, SizeCallback sizeCallback) {
+			this.parent = parent;
+			this.children = children;
+			this.scrollToViewIdx = scrollToViewIdx;
+			this.sizeCallback = sizeCallback;
+		}
 
-            parent.removeViewsInLayout(0, children.length);
+		@Override
+		public void onGlobalLayout() {
+			// System.out.println("onGlobalLayout");
 
-            final int w = me.getMeasuredWidth();
-            final int h = me.getMeasuredHeight();
+			final HorizontalScrollView me = FacebookSlideView.this;
 
-            // System.out.println("w=" + w + ", h=" + h);
+			// The listener will remove itself as a layout listener to the HSV
+			me.getViewTreeObserver().removeGlobalOnLayoutListener(this);
 
-            // Add each view in turn, and apply the width and height returned by the SizeCallback.
-            int[] dims = new int[2];
-            scrollToViewPos = 0;
-            for (int i = 0; i < children.length; i++) {
-                sizeCallback.getViewSize(i, w, h, dims);
-                // System.out.println("addView w=" + dims[0] + ", h=" + dims[1]);
-                children[i].setVisibility(View.VISIBLE);
-                parent.addView(children[i], dims[0], dims[1]);
-                if (i < scrollToViewIdx) {
-                    scrollToViewPos += dims[0];
-                }
-            }
+			me.setVisibility(View.INVISIBLE);
 
-            // For some reason we need to post this action, rather than call immediately.
-            // If we try immediately, it will not scroll.
-            new Handler().post(new Runnable() {
-                @Override
-                public void run() {
-                    me.scrollBy(scrollToViewPos, 0);
-                }
-            });
-        }
-    }
+			// Allow the SizeCallback to 'see' the Views before we remove them
+			// and re-add them.
+			// This lets the SizeCallback prepare View sizes, ahead of calls to
+			// SizeCallback.getViewSize().
+			sizeCallback.onGlobalLayout();
 
-    /**
-     * Callback interface to interact with the HSV.
-     */
-    public interface SizeCallback {
-        /**
-         * Used to allow clients to measure Views before re-adding them.
-         */
-        public void onGlobalLayout();
+			parent.removeViewsInLayout(0, children.length);
 
-        /**
-         * Used by clients to specify the View dimensions.
-         * 
-         * @param idx
-         *            Index of the View.
-         * @param w
-         *            Width of the parent View.
-         * @param h
-         *            Height of the parent View.
-         * @param dims
-         *            dims[0] should be set to View width. dims[1] should be set to View height.
-         */
-        public void getViewSize(int idx, int w, int h, int[] dims);
-    }
+			final int w = me.getMeasuredWidth();
+			final int h = me.getMeasuredHeight();
+
+			// System.out.println("w=" + w + ", h=" + h);
+
+			// Add each view in turn, and apply the width and height returned by
+			// the SizeCallback.
+			int[] dims = new int[2];
+			scrollToViewPos = 0;
+			for (int i = 0; i < children.length; i++) {
+				sizeCallback.getViewSize(i, w, h, dims);
+				//System.out.println("onGlobalLayout addingView w=" + dims[0] + ", h=" + dims[1]);
+				children[i].setVisibility(View.VISIBLE);
+				parent.addView(children[i], dims[0], dims[1]);
+				if (i < scrollToViewIdx) {
+					scrollToViewPos += dims[0];
+				}
+			}
+			// me.scrollTo(2, 0);//scrollBy(scrollToViewPos+scrollToViewPos, 1);
+			// For some reason we need to post this action, rather than call
+			// immediately.
+			// If we try immediately, it will not scroll.
+
+			me.post(new Runnable() {
+				@Override
+				public void run() {
+					me.setVisibility(View.VISIBLE);
+					me.scrollBy(scrollToViewPos, 0);
+					//System.out.println("onGlobalLayout scrollToViewPos=" + scrollToViewPos + ", me getWidth=" + me.getWidth());
+				}
+			});
+		}
+	}
+
+	/**
+	 * Callback interface to interact with the HSV.
+	 */
+	public interface SizeCallback {
+		/**
+		 * Used to allow clients to measure Views before re-adding them.
+		 */
+		public void onGlobalLayout();
+
+		/**
+		 * Used by clients to specify the View dimensions.
+		 * 
+		 * @param idx
+		 *            Index of the View.
+		 * @param w
+		 *            Width of the parent View.
+		 * @param h
+		 *            Height of the parent View.
+		 * @param dims
+		 *            dims[0] should be set to View width. dims[1] should be set
+		 *            to View height.
+		 */
+		public void getViewSize(int idx, int w, int h, int[] dims);
+	}
 }

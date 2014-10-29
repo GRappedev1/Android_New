@@ -25,9 +25,9 @@ public class BaseParser {
 					responseObject = responseObject.optJSONObject(request);
 				}
 				if (null != responseObject) {
-					mStatus = responseObject.optBoolean("Status", false);
-					mResponseCode = responseObject.optString("ResponseCode", "failure");
-					mMessage = responseObject.optString("Message", "Message not found");
+					mStatus = responseObject.optBoolean("status", false);
+//					mResponseCode = responseObject.optString("ResponseCode", "failure");
+					mMessage = responseObject.optString("msg", "Message not found");
 					return true;
 				}
 			} catch (Exception e) {
@@ -48,7 +48,7 @@ public class BaseParser {
 		}
 
 		try {
-			return responseObject.getJSONObject("Data");
+			return responseObject.getJSONObject("data");
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}

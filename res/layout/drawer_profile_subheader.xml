@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background" >
+
+    <LinearLayout
+        android:id="@+id/user_detail_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="0dp"
+        android:paddingTop="10dp"
+        android:weightSum="7" >
+
+        <ImageView
+            android:id="@+id/user_iv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="2"
+            android:contentDescription="@string/app_name"
+            android:paddingTop="2dp"
+            android:src="@drawable/default_picture" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="5"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="0dp" >
+
+            <TextView
+                android:id="@+id/user_name_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/designation_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/company_name_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/contact_name_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:typeface="sans" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/user_detail_rl"
+        android:background="@color/LightBlack" />
+
+    <LinearLayout
+        android:id="@+id/earning_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view1"
+        android:background="@color/DarkGrey"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:weightSum="20" >
+
+            <TextView
+                android:id="@+id/points_earned_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="8"
+                android:gravity="bottom|center_horizontal"
+                android:textColor="@color/lt_green"
+                android:textSize="14sp"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/points_earned_text_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="12"
+                android:gravity="top|center_horizontal|center"
+                android:text="Point Earn"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:typeface="sans" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/LightBlack" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:weightSum="20" >
+
+            <TextView
+                android:id="@+id/reputation_points_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="8"
+                android:gravity="bottom|center_horizontal"
+                android:textColor="@color/lt_green"
+                android:textSize="14sp"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/reputation_points_text_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="12"
+                android:gravity="top|center_horizontal"
+                android:text="info_points"
+                android:textColor="@color/White"
+                android:textSize="14sp"
+                android:typeface="sans" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/Black" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:weightSum="20" >
+
+            <TextView
+                android:id="@+id/est_earning_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="8"
+                android:gravity="center_horizontal|bottom"
+                android:textColor="@color/lt_green"
+                android:textSize="14sp"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/est_earning_text_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="12"
+                android:gravity="center_horizontal|top"
+                android:text="Est_Month_Earning"
+                android:textColor="@color/White"
+                android:textSize="14sp"
+                android:typeface="sans" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

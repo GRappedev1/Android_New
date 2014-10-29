@@ -2,379 +2,89 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/dashB_bg"
-    android:weightSum="7" 
-    >
+    android:orientation="vertical" >
 
     <RelativeLayout
         android:id="@+id/headerProfile_rl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal" >
+        android:paddingTop="4dp" >
 
-        <ImageView
-            android:id="@+id/profilePick_iv"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="5dp"
-            android:src="@drawable/default_picture" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@id/profilePick_iv"
-            android:orientation="vertical" >
-
-            <TextView
-                android:id="@+id/tv1"
-                style="@style/Wrap.Text.White"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dr. Robert Bryan" />
-
-            <TextView
-                android:id="@+id/tv2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="General Surgeon"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="21 Badges"
-                android:textSize="14sp" />
-
-        </LinearLayout>
+        <!-- <include layout="@layout/drawer_subheader"/> -->
     </RelativeLayout>
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1px"
-        android:layout_marginTop="5dp"
-        android:background="@color/dashB_line" />
+  
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="5dp" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/statusTv"
-            style="@style/WrapSmallMid.Text.White"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight=".3"
-            android:background="@drawable/left_corner_dashb"
-            android:paddingBottom="5dp"
-            android:paddingLeft="5dp"
-            android:paddingTop="5dp"
-            android:text="@string/on_call" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/LightBlack" />
 
-        <TextView
-            android:id="@+id/departmentTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight=".7"
-            android:background="@drawable/right_corner_dashb"
-            android:paddingBottom="5dp"
-            android:paddingLeft="5dp"
-            android:paddingTop="5dp"
-            android:text="@string/Surgery"
-            android:textColor="@color/dashB_textGrey" />
+            <LinearLayout
+                android:id="@+id/layout_quest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="7" >
 
-    </LinearLayout>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="6"
+                    android:text="Categories"
+                    android:textColor="@color/white" />
+            </LinearLayout>
 
-	<View
-	    android:layout_width="fill_parent"
-	    android:layout_height="1px"
-	    android:background="@color/dashB_line" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/LightBlack"
+                android:visibility="invisible" />
 
-	<ScrollView
-	    android:id="@+id/scrollView1"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:visibility="visible" >
+            <LinearLayout
+                android:id="@+id/layout_home"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_marginLeft="5dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="7" >
 
-	    <LinearLayout
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_marginLeft="15dp"
-	        android:orientation="vertical" >
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="6"
+                    android:background="@null"
+                    android:hint="Type to search"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/lt_grey" />
+            </LinearLayout>
 
-	        <LinearLayout
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:layout_marginLeft="10dp"
-	            android:orientation="vertical"
-	            android:visibility="visible" >
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/LightBlack"
+                android:visibility="invisible" />
 
-	            <LinearLayout
-	                 
-	                android:id="@+id/dahsboard_ll"
-	                android:layout_width="match_parent"
-	                android:layout_height="0dp"
-	                android:layout_marginTop="5dp"
-	                android:layout_weight="1"
-	                android:orientation="horizontal"
-	                android:paddingBottom="5dp"
-	                android:paddingTop="5dp" >
-
-	                <ImageView
-	                    android:id="@+id/imageView1"
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:src="@drawable/icon_dashboard" />
-
-	                <TextView
-	                    style="@style/Wrap.Text.White"
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:layout_gravity="center_vertical"
-	                    android:paddingLeft="10dp"
-	                    android:text="@string/Dashboard" />
-
-	            </LinearLayout>
-
-	            <LinearLayout
-	                 android:id="@+id/addPatient_ll"
-	                android:layout_width="match_parent"
-	                android:layout_height="0dp"
-	                android:layout_gravity="center_vertical"
-	                android:layout_marginTop="3dp"
-	                android:layout_weight="1"
-	                android:orientation="horizontal"
-	                android:paddingBottom="5dp"
-	                android:paddingTop="5dp" >
-
-	                <ImageView
-	                    android:id="@+id/imageView2"
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:src="@drawable/icon_add_patient" />
-
-	                <TextView
-	                    style="@style/Wrap.Text.White"
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:layout_gravity="center_vertical"
-	                    android:paddingLeft="10dp"
-	                    android:text="@string/Add_Patient" />
-
-	            </LinearLayout>
-
-	            <LinearLayout
-	                android:id="@+id/teams_ll"
-	                android:layout_width="match_parent"
-	                android:layout_height="0dp"
-	                android:layout_marginTop="3dp"
-	                android:layout_weight="1"
-	                android:orientation="horizontal"
-	                android:paddingBottom="5dp"
-	                android:paddingTop="5dp" >
-
-	                <ImageView
-	                    android:id="@+id/imageView3"
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:src="@drawable/icon_add_teams" />
-
-	                <TextView
-	                    style="@style/Wrap.Text.White"
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:layout_gravity="center_vertical"
-	                    android:paddingLeft="10dp"
-	                    android:text="@string/Teams" />
-
-	            </LinearLayout>
-
-	            <LinearLayout
-	                 android:id="@+id/tasks_ll"
-	                android:layout_width="match_parent"
-	                android:layout_height="0dp"
-	                android:layout_marginTop="3dp"
-	                android:layout_weight="1"
-	                android:orientation="horizontal"
-	                android:paddingBottom="5dp"
-	                android:paddingTop="5dp" >
-
-	                <ImageView
-	                    android:id="@+id/imageView4"
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:src="@drawable/icon_tasks" />
-
-	                <TextView
-	                    style="@style/Wrap.Text.White"
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:layout_gravity="center_vertical"
-	                    android:paddingLeft="10dp"
-	                    android:text="@string/Tasks" />
-
-	            </LinearLayout>
-
-	            <LinearLayout
-	                android:id="@+id/badges_ll"
-	                android:layout_width="match_parent"
-	                android:layout_height="0dp"
-	                android:layout_marginTop="3dp"
-	                android:layout_weight="1"
-	                android:orientation="horizontal"
-	                android:paddingBottom="5dp"
-	                android:paddingTop="5dp" >
-
-	                <ImageView
-	                    android:id="@+id/imageView5"
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:src="@drawable/icon_badges" />
-
-	                <TextView
-	                    style="@style/Wrap.Text.White"
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:layout_gravity="center_vertical"
-	                    android:paddingLeft="10dp"
-	                    android:text="@string/Badges" />
-
-	            </LinearLayout>
-	        </LinearLayout>
-
-	        <View
-	            android:layout_width="fill_parent"
-	            android:layout_height="1px"
-	            android:layout_marginTop="5dp"
-	            android:layout_weight="1"
-	            android:background="@color/dashB_line" />
-
-	        <LinearLayout
-	            android:id="@+id/accountSetting_ll"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:layout_marginLeft="10dp"
-	            android:orientation="vertical"
-	            android:visibility="visible" >
-
-	            <LinearLayout
-	                android:layout_width="match_parent"
-	                android:layout_height="0dp"
-	                android:layout_marginTop="3dp"
-	                android:layout_weight="1"
-	                android:orientation="horizontal"
-	                android:paddingBottom="5dp"
-	                android:paddingTop="5dp" >
-
-	                <ImageView
-	                    android:id="@+id/imageView5"
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:src="@drawable/icon_account_settings" />
-
-	                <TextView
-	                    style="@style/Wrap.Text.White"
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:layout_gravity="center_vertical"
-	                    android:paddingLeft="10dp"
-	                    android:text="@string/Badges" />
-
-	            </LinearLayout>
-
-	            <LinearLayout
-	                android:id="@+id/editProfile_ll"
-	                android:layout_width="match_parent"
-	                android:layout_height="0dp"
-	                android:layout_marginTop="3dp"
-	                android:layout_weight="1"
-	                android:orientation="horizontal"
-	                android:paddingBottom="5dp"
-	                android:paddingTop="5dp" >
-
-	                <ImageView
-	                    android:id="@+id/imageView6"
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:src="@drawable/icon_edit_profile" />
-
-	                <TextView
-	                    style="@style/Wrap.Text.White"
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:layout_gravity="center_vertical"
-	                    android:paddingLeft="10dp"
-	                    android:text="Edit Profile"
-	                    android:textSize="16sp" />
-
-	            </LinearLayout>
-
-	            <LinearLayout
-	                android:id="@+id/SwitchAc_ll"
-	                android:layout_width="match_parent"
-	                android:layout_height="0dp"
-	                android:layout_marginTop="3dp"
-	                android:layout_weight="1"
-	                android:orientation="horizontal"
-	                android:paddingBottom="5dp"
-	                android:paddingTop="5dp" >
-
-	                <ImageView
-	                    android:id="@+id/imageView5"
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:src="@drawable/icon_switch_account" />
-
-	                <TextView
-	                    style="@style/Wrap.Text.White"
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:layout_gravity="center_vertical"
-	                    android:paddingLeft="10dp"
-	                    android:text="@string/Switch_Account"
-	                    android:textSize="16sp" />
-
-	            </LinearLayout>
-
-	            <LinearLayout
-	                android:id="@+id/logout_ll"
-	                android:layout_width="match_parent"
-	                android:layout_height="0dp"
-	                android:layout_marginTop="3dp"
-	                android:layout_weight="1"
-	                android:orientation="horizontal"
-	                android:paddingBottom="5dp"
-	                android:paddingTop="5dp" >
-
-	                <ImageView
-	                    android:id="@+id/imageView7"
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:src="@drawable/icon_logout" />
-
-	                <TextView
-	                    android:id="@+id/logout_tv"
-	                    style="@style/Wrap.Text.White"
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:layout_gravity="center_vertical"
-	                    android:paddingLeft="10dp"
-	                    android:text="Logout"
-	                    android:textSize="16sp" />
-
-	            </LinearLayout>
-	        </LinearLayout>
-	    </LinearLayout>
-
-	</ScrollView>
+            <ListView
+                android:id="@+id/homepage_list"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:divider="@null" >
+            </ListView>
+        </LinearLayout>
+ 
 
 </LinearLayout>

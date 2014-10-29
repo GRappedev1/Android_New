@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/inner_content"
-    android:layout_gravity="right"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -12,8 +11,8 @@
         android:id="@+id/btnTry"
         android:layout_width="wrap_content"
         android:layout_height="1dp"
-        android:visibility="invisible"
-        android:text="Button" />
+        android:text="Button"
+        android:visibility="invisible" />
 
     <ImageView
         android:id="@+id/user_iv"
@@ -22,19 +21,41 @@
         android:layout_gravity="center"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="50dp"
-        android:src="@drawable/default_picture" />
+        android:src="@drawable/default_picture"
+        android:visibility="gone" />
 
-    <TextView
-        android:id="@+id/userWecome_tv"
-        style="@style/WrapSmallMid.Text.LtGrey"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:gravity="center_horizontal"
-        android:paddingBottom="20dp"
-        android:text="@string/welcome_user_first"
-        android:textColor="@color/DarkGrey"
-        android:textSize="18sp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/userWecome_tv"
+            style="@style/WrapSmallMid.Text.LtGrey"
+            android:layout_width="wrap_content"
+            android:layout_above="@+id/search_edittext"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:paddingBottom="10dp"
+            android:text="@string/welcome_user_first"
+            android:textColor="@color/DarkGrey"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/search_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/grey_search_field"
+            android:hint="Type to search control"
+            android:gravity="center"
+            android:layout_margin="10dip"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,7 +64,8 @@
         android:gravity="bottom"
         android:orientation="vertical"
         android:paddingLeft="15dp"
-        android:paddingRight="15dp" >
+        android:paddingRight="15dp"
+        android:visibility="gone" >
 
         <Button
             style="@style/Wrap.Text.White"
@@ -51,7 +73,8 @@
             android:background="@drawable/selector_btn_blue"
             android:gravity="center"
             android:text="@string/Watch_demo"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:visibility="gone" />
 
         <Button
             style="@style/Wrap.Text.White"
@@ -59,7 +82,8 @@
             android:background="@drawable/selector_btn_blue"
             android:gravity="center"
             android:text="@string/Invite_Friends"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:visibility="gone" />
     </LinearLayout>
 
 </LinearLayout>

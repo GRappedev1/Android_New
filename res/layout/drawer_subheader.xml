@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/dashB_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv1"
+        style="@style/Wrap.Text.White"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Sign up"
+        android:textColor="@color/White"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="5dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/imageViewfb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:src="@drawable/selector_tab_fb" />
+
+        <ImageView
+            android:id="@+id/imageViewgplus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/selector_tab_gplus" />
+
+        <ImageView
+            android:id="@+id/imageView1inbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:src="@drawable/selector_tab_mail" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp" >
+
+        <View
+            android:id="@+id/viewleft"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tv_or"
+            android:background="@color/dashB_textGrey" />
+
+        <TextView
+            android:id="@+id/tv_or"
+            style="@style/Wrap.Text.White"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:text="OR"
+            android:textColor="@color/White" />
+
+        <View
+            android:id="@+id/viewright"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tv_or"
+            android:background="@color/dashB_textGrey" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/DarkGrey"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingLeft="80dp"
+        android:paddingRight="80dp"
+        android:paddingTop="10dp"
+        android:text="Login"
+        android:textColor="@color/White" />
+
+</LinearLayout>

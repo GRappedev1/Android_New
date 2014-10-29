@@ -79,6 +79,10 @@
             android:name="com.vinfotech.module.ImageGridView.GridModelActivity"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name="com.vinfotech.main.FacebookSliderActivity"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>
