@@ -8,6 +8,7 @@ import org.json.JSONException;
 
 import com.vinfotech.model.Categories;
 import com.vinfotech.model.GetAllData;
+import com.vinfotech.model.ProjectBean;
 
 public class GetAllDataParser extends BaseParser {
 
@@ -16,6 +17,7 @@ public class GetAllDataParser extends BaseParser {
 		if (getStaus()) {
 			GetAllData.setInstance(null);
 			getRoles(getDataObject().optJSONArray("categories"));
+			getProjects(getDataObject().optJSONArray("projects"));
 			ret = true;
 		} else {
 			ret = false;
@@ -38,5 +40,22 @@ public class GetAllDataParser extends BaseParser {
 			}
 		}
 		GetAllData.getInstance().setCategories(categories);
+	}
+
+	/*
+	 * Retrive projects arraylist from all data params json Array
+	 */
+	private void getProjects(JSONArray jsonArray) {
+		List<ProjectBean> project = new ArrayList<ProjectBean>();
+		if (null != jsonArray) {
+			for (int i = 0; i < jsonArray.length(); i++) {
+				try {
+					project.add(new ProjectBean(jsonArray.getJSONObject(i)));
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		GetAllData.getInstance().setProjects(project);
 	}
 }

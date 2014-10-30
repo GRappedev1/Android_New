@@ -6,7 +6,16 @@ import java.util.List;
 
 public class GetAllData {
 
-	public List<Categories> categories=  new ArrayList<Categories>();;
+	public List<Categories> categories=  new ArrayList<Categories>();
+	public List<ProjectBean> projects=  new ArrayList<ProjectBean>();;
+	public List<ProjectBean> getProjects() {
+		return projects;
+	}
+
+	public void setProjects(List<ProjectBean> projects) {
+		this.projects = projects;
+	}
+
 	public List<Categories> getCategories() {
 		return categories;
 	}
