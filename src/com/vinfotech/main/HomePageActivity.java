@@ -21,8 +21,11 @@ import android.location.LocationManager;
 import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.StrictMode;
+import android.text.Editable;
 import android.text.Html;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -34,6 +37,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
@@ -42,6 +46,7 @@ import com.android.facebookslider.ClickListenerForScrolling;
 import com.android.facebookslider.FacebookSlideView;
 import com.android.facebookslider.SizeCallbackForMenu;
 import com.google.android.gcm.GCMRegistrar;
+import com.vinfotech.adapter.HomePageAdapter;
 import com.vinfotech.demoapp.R;
 import com.vinfotech.dialogs.MobileEditDialog;
 import com.vinfotech.handler.HeaderLayout;
@@ -61,6 +66,11 @@ import com.vinfotech.server.parser.SignInParser;
 import com.vinfotech.utility.DialogUtil;
 import com.vinfotech.utility.Utility;
 
+/*
+ * @author yogesht
+ * 
+ * This is main page of entire app having function sliding and get all data for show.
+ */
 public class HomePageActivity extends Activity implements OnClickListener,
 		HttpResponseListener, GCMRegisterListener {
 
@@ -105,8 +115,10 @@ public class HomePageActivity extends Activity implements OnClickListener,
 	private ImageLoader imageLoader;
 
 	private static int z;
-	HeaderLayout mHeaderLayout;
-	ClickListenerForScrolling mChatClickListenerForScrolling;
+	private ListView sideItemList;
+	private HeaderLayout mHeaderLayout;
+	private ClickListenerForScrolling mChatClickListenerForScrolling;
+	private HomePageAdapter adapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -160,19 +172,24 @@ public class HomePageActivity extends Activity implements OnClickListener,
 		setContentView(scrollView);
 		ImageButton btnSlide = (ImageButton) teamView
 				.findViewById(R.id.left_ib);
+		sideItemList = (ListView) menuView
+				.findViewById(R.id.homepage_side_list);
 
 		btnSlide.setOnClickListener(new ClickListenerForScrolling(scrollView,
 				menuView, menuOut, false));
 
 		final View[] children = new View[] { menuView, teamView };
-		// final View[] children = new View[] { menuView, teamView};
-		// Scroll to app (view[1]) when layout finished.
 		int scrollToViewIdx = 1;
-
 		scrollView.initViews(children, scrollToViewIdx,
 				new SizeCallbackForMenu(btnSlide));
 
-		// GlobalVariables.setDrawerData(TeamActivity.this);
+		adapter = new HomePageAdapter(this);
+		sideItemList.setAdapter(adapter);
+
+		EditText etSeachCategories = (EditText) menuView
+				.findViewById(R.id.search_categories_edittext);
+		etSeachCategories.addTextChangedListener(addTextListner);
+
 	}
 
 	@Override
@@ -211,9 +228,8 @@ public class HomePageActivity extends Activity implements OnClickListener,
 			getDataparser.parse(response);
 			if (getDataparser.getStaus()) {
 
-				GetAllData getAllData = getDataparser.getAllData();
+				adapter.setList(GetAllData.getInstance().getCategories());
 
-				Log.i("MIS", "" + getAllData.roles.size());
 			}
 
 			break;
@@ -223,43 +239,37 @@ public class HomePageActivity extends Activity implements OnClickListener,
 		}
 	}
 
-	// private void setcurrentTrackZip() {
-	// switch (z) {
-	// case 0:
-	// mZipCode = "90404";
-	// z++;
-	// break;
-	// case 1:
-	// mZipCode = "90067";
-	// z++;
-	// break;
-	// case 2:
-	// mZipCode = "90057";
-	// z++;
-	// break;
-	// case 3:
-	// mZipCode = "90808";
-	// z++;
-	// break;
-	// case 4:
-	// mZipCode = "22786";
-	// z++;
-	// break;
-	// case 5:
-	// mZipCode = "452001";
-	// z++;
-	// break;
-	// default:
-	// mZipCode = "60181";
-	// z++;
-	// break;
-	// }
-	// new SkyLinePreferences(this).setCurrentTrackZipCode(mZipCode);
-	// }
-
 	@Override
 	public void onCancel(boolean canceled) {
 
 	}
+
+	private Handler reloadHandler = new Handler();
+	private final TextWatcher addTextListner = new TextWatcher() {
+
+		@Override
+		public void onTextChanged(final CharSequence search, int arg1,
+				int arg2, int arg3) {
+			reloadHandler.removeCallbacksAndMessages(null);
+			reloadHandler.postDelayed(new Runnable() {
+
+				@Override
+				public void run() {
+					// addFriendAdapter.setFilter(search.toString().trim());
+					adapter.getFilter().filter(
+							search.toString().trim().toLowerCase());
+				}
+			}, 400);
+		}
+
+		@Override
+		public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
+				int arg3) {
+		}
+
+		@Override
+		public void afterTextChanged(Editable editable) {
+		}
+	};
 
 }

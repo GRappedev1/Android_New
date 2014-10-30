@@ -42,6 +42,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_weight="6"
                     android:text="Categories"
+                    android:textSize="18dip"
                     android:textColor="@color/white" />
             </LinearLayout>
 
@@ -69,6 +70,7 @@
                     android:background="@null"
                     android:hint="Type to search"
                     android:textColor="@color/white"
+                    android:id="@+id/search_categories_edittext"
                     android:textColorHint="@color/lt_grey" />
             </LinearLayout>
 
@@ -79,7 +81,7 @@
                 android:visibility="invisible" />
 
             <ListView
-                android:id="@+id/homepage_list"
+                android:id="@+id/homepage_side_list"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:divider="@null" >

@@ -32,7 +32,10 @@ public class ClickListenerForScrolling implements OnClickListener {
 		this.menu = menu;
 		this.menuOut = menuOut;
 		this.isChat = false;
-//		ChatDrawer.patientId = 0;
+
+	
+	
+	
 	}
 
 	public ClickListenerForScrolling(FacebookSlideView scrollView, View menu, boolean menuOut, boolean isMenuDrawer, final EditText editText) {
@@ -51,7 +54,6 @@ public class ClickListenerForScrolling implements OnClickListener {
 
 	public ClickListenerForScrolling(FacebookSlideView scrollView, View menu, boolean menuOut, boolean isMenuDrawer, boolean isChat) {
 		super();
-		// editText.clearFocus();
 		
 		this.editText = null;
 
@@ -60,14 +62,12 @@ public class ClickListenerForScrolling implements OnClickListener {
 		this.menu = menu;
 		this.menuOut = menuOut;
 		this.isChat = isChat;
-//		ChatDrawer.patientId = 0;
 	}
 
 	public ClickListenerForScrolling(FacebookSlideView scrollView, View menu, boolean menuOut, boolean isMenuDrawer, boolean isChat,
 			int patientID) {
 		super();
-		// editText.clearFocus();
-		//Log.v("in side on click", ""+patientID);
+	
 		this.editText = null;
 
 		this.isMenuDrawer = isMenuDrawer;
@@ -75,7 +75,6 @@ public class ClickListenerForScrolling implements OnClickListener {
 		this.menu = menu;
 		this.menuOut = menuOut;
 		this.isChat = isChat;
-//		ChatDrawer.patientId = patientID;
 	}
 
 	@Override
@@ -86,9 +85,7 @@ public class ClickListenerForScrolling implements OnClickListener {
 	            TypedValue.COMPLEX_UNIT_DIP, 65 , menuView.getContext().getResources()
 	                .getDisplayMetrics());
 		final int menuWidth = menu.getMeasuredWidth();
-		//Log.v("ClickListenerForScrolling", "onClick - menuWidth=" + menuWidth + ", leftSpace=" + leftSpace + ", menuOut=" + menuOut
-//				+ ", isChat=" + isChat);
-
+	
 		// Ensure menu is visible
 		menu.setVisibility(View.VISIBLE);
 
