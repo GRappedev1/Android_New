@@ -1,5 +1,6 @@
 package com.vinfotech.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +8,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class ProjectBean {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class ProjectBean implements Serializable {
 
 	public int projectId;
 	public String project_name;
@@ -121,4 +125,6 @@ public class ProjectBean {
 	public void setpScreen(List<ProjectScreenBean> pScreen) {
 		this.pScreen = pScreen;
 	}
+
+	
 }

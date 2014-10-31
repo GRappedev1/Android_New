@@ -1,24 +1,10 @@
 package com.vinfotech.main;
 
-import java.io.IOException;
-import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.location.Address;
-import android.location.Geocoder;
-import android.location.Location;
-import android.location.LocationManager;
-import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -27,11 +13,9 @@ import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
@@ -42,21 +26,17 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
 import com.android.facebookslider.ClickListenerForScrolling;
 import com.android.facebookslider.FacebookSlideView;
 import com.android.facebookslider.SizeCallbackForMenu;
-import com.google.android.gcm.GCMRegistrar;
 import com.vinfotech.adapter.HomePageAdapter;
 import com.vinfotech.adapter.HomeScreenAdapter;
 import com.vinfotech.demoapp.R;
 import com.vinfotech.dialogs.MobileEditDialog;
 import com.vinfotech.handler.HeaderLayout;
 import com.vinfotech.main.GCMIntentService.GCMRegisterListener;
-import com.vinfotech.model.DashBoard;
-import com.vinfotech.model.FacebookSliderViews;
 import com.vinfotech.model.GetAllData;
 import com.vinfotech.model.MenuActivity;
 import com.vinfotech.model.ProjectBean;
@@ -65,11 +45,8 @@ import com.vinfotech.server.HTTPRequest;
 import com.vinfotech.server.HttpConnector;
 import com.vinfotech.server.HttpConnector.HttpResponseListener;
 import com.vinfotech.server.fileutil.ImageLoader;
-import com.vinfotech.server.parser.BaseParser;
 import com.vinfotech.server.parser.GetAllDataParser;
-import com.vinfotech.server.parser.SignInParser;
 import com.vinfotech.utility.DialogUtil;
-import com.vinfotech.utility.Utility;
 import com.vinfotech.widgets.listner.SelectedItemInterface;
 
 /*
@@ -129,6 +106,7 @@ public class HomePageActivity extends Activity implements OnClickListener,
 	private HomeScreenAdapter homeScreenAdapter;
 	private ListView mainList;
 	private RelativeLayout mainRelativeLayout;
+	private Intent pDetailIntent;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -168,7 +146,6 @@ public class HomePageActivity extends Activity implements OnClickListener,
 		@Override
 		public void onCategorySelect(int categoryId) {
 			// TODO Auto-generated method stub
-			Toast.makeText(activity, "" + categoryId, 1).show();
 
 			pCategoryList = new ArrayList<ProjectBean>();
 
@@ -244,6 +221,26 @@ public class HomePageActivity extends Activity implements OnClickListener,
 		// menuOut = false;
 		sideItemList.setOnItemClickListener(new ClickListenerForScrolling(
 				scrollView, menuView, true, true, itemClickListner));
+
+		mainList.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				// TODO Auto-generated method stub
+
+				if (pCategoryList.size() > 0)
+
+					pDetailIntent = new Intent(HomePageActivity.this,
+							ProjectDetailActivity.class);
+
+				pDetailIntent.putExtra("object", pCategoryList.get(position));
+				
+				startActivity(pDetailIntent);
+
+			}
+
+		});
 
 	}
 

@@ -83,6 +83,11 @@
             android:name="com.vinfotech.main.FacebookSliderActivity"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name="com.vinfotech.main.ProjectDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RightToLeftTheme" >
+        </activity>
     </application>
 
 </manifest>

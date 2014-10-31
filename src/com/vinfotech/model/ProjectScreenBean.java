@@ -1,8 +1,10 @@
 package com.vinfotech.model;
 
+import java.io.Serializable;
+
 import org.json.JSONObject;
 
-public class ProjectScreenBean {
+public class ProjectScreenBean implements Serializable {
 	public int project_screen_id;
 	public String caption;
 	public String last_updated_date;

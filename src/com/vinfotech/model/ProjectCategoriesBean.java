@@ -1,8 +1,10 @@
 package com.vinfotech.model;
 
+import java.io.Serializable;
+
 import org.json.JSONObject;
 
-public class ProjectCategoriesBean {
+public class ProjectCategoriesBean implements Serializable {
 	public int category_id;
 	public String category_name;
 	public String last_updated_date;
