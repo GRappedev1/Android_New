@@ -16,7 +16,7 @@
             android:id="@+id/header_name"
             style="@style/Wrap.Text.DarkGrey"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:paddingBottom="4dip"
@@ -26,6 +26,13 @@
             android:text="Building_Details"
             android:textColor="@color/white"
             android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@+id/header_name"
+            android:background="@color/LightBlack"
+            android:visibility="visible" />
     </RelativeLayout>
 
 </LinearLayout>

@@ -29,32 +29,48 @@
         android:layout_height="match_parent"
         android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/userWecome_tv"
-            style="@style/WrapSmallMid.Text.LtGrey"
-            android:layout_width="wrap_content"
-            android:layout_above="@+id/search_edittext"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"
-            android:paddingBottom="10dp"
-            android:text="@string/welcome_user_first"
-            android:textColor="@color/DarkGrey"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/search_edittext"
+        <RelativeLayout
+            android:id="@+id/main_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:background="@drawable/grey_search_field"
-            android:hint="Type to search control"
-            android:gravity="center"
-            android:layout_margin="10dip"
-            android:ems="10" >
+            android:layout_height="match_parent"
+            
+            android:orientation="vertical" >
 
-            <requestFocus />
-        </EditText>
+            <TextView
+                android:id="@+id/userWecome_tv"
+                style="@style/WrapSmallMid.Text.LtGrey"
+                android:layout_width="wrap_content"
+                android:layout_above="@+id/search_edittext"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:paddingBottom="10dp"
+                android:text="@string/welcome_user_first"
+                android:textColor="@color/DarkGrey"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/search_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_margin="10dip"
+                android:background="@drawable/grey_search_field"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Type to search control" >
+
+                <requestFocus />
+            </EditText>
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/homepage_list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:divider="@null"
+            android:visibility="invisible" >
+        </ListView>
     </RelativeLayout>
 
     <LinearLayout

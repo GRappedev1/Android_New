@@ -22,6 +22,8 @@ public class ProjectBean {
 	public String status;
 	public String last_updated_date;
 	public String file_name;
+	public List<ProjectCategoriesBean> pCategories = new ArrayList<ProjectCategoriesBean>();
+	public List<ProjectScreenBean> pScreen = new ArrayList<ProjectScreenBean>();;
 
 	public ProjectBean(int projectId, String project_name, int file_upload_id,
 			String projectonelinedescription, String project_description,
@@ -82,6 +84,7 @@ public class ProjectBean {
 					e.printStackTrace();
 				}
 			}
+			setpCategories(projectCategory);
 		}
 	}
 
@@ -99,6 +102,23 @@ public class ProjectBean {
 					e.printStackTrace();
 				}
 			}
+			setpScreen(projectScreen);
 		}
+	}
+
+	public List<ProjectCategoriesBean> getpCategories() {
+		return pCategories;
+	}
+
+	public void setpCategories(List<ProjectCategoriesBean> pCategories) {
+		this.pCategories = pCategories;
+	}
+
+	public List<ProjectScreenBean> getpScreen() {
+		return pScreen;
+	}
+
+	public void setpScreen(List<ProjectScreenBean> pScreen) {
+		this.pScreen = pScreen;
 	}
 }

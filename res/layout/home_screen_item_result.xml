@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingBottom="5dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="5dip" >
+
+        <TextView
+            android:id="@+id/header_name"
+            style="@style/Wrap.Text.DarkGrey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="4dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="5dip"
+            android:paddingTop="5dip"
+            android:text="Building_Details"
+            android:textColor="@color/grey"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/subtitle"
+            style="@style/Wrap.Text.DarkGrey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/header_name"
+            android:paddingBottom="4dip"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dip"
+            android:text="Basic Architecture"
+            android:textColor="@color/sky"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/header_name"
+            android:layout_centerHorizontal="true"
+            android:background="@color/LightBlack"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/platform"
+            style="@style/Wrap.Text.DarkGrey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/header_name"
+            android:gravity="right"
+            android:paddingBottom="4dip"
+            android:paddingRight="5dp"
+            android:paddingTop="5dip"
+            android:text="Basic Architecture"
+            android:textColor="@color/sky"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@+id/subtitle"
+            android:background="@color/LightBlack"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+</LinearLayout>

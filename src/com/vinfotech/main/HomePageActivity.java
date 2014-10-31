@@ -32,12 +32,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
@@ -47,6 +50,7 @@ import com.android.facebookslider.FacebookSlideView;
 import com.android.facebookslider.SizeCallbackForMenu;
 import com.google.android.gcm.GCMRegistrar;
 import com.vinfotech.adapter.HomePageAdapter;
+import com.vinfotech.adapter.HomeScreenAdapter;
 import com.vinfotech.demoapp.R;
 import com.vinfotech.dialogs.MobileEditDialog;
 import com.vinfotech.handler.HeaderLayout;
@@ -55,6 +59,7 @@ import com.vinfotech.model.DashBoard;
 import com.vinfotech.model.FacebookSliderViews;
 import com.vinfotech.model.GetAllData;
 import com.vinfotech.model.MenuActivity;
+import com.vinfotech.model.ProjectBean;
 import com.vinfotech.model.SignIn;
 import com.vinfotech.server.HTTPRequest;
 import com.vinfotech.server.HttpConnector;
@@ -65,6 +70,7 @@ import com.vinfotech.server.parser.GetAllDataParser;
 import com.vinfotech.server.parser.SignInParser;
 import com.vinfotech.utility.DialogUtil;
 import com.vinfotech.utility.Utility;
+import com.vinfotech.widgets.listner.SelectedItemInterface;
 
 /*
  * @author yogesht
@@ -119,6 +125,10 @@ public class HomePageActivity extends Activity implements OnClickListener,
 	private HeaderLayout mHeaderLayout;
 	private ClickListenerForScrolling mChatClickListenerForScrolling;
 	private HomePageAdapter adapter;
+	private ArrayList<ProjectBean> pCategoryList;
+	private HomeScreenAdapter homeScreenAdapter;
+	private ListView mainList;
+	private RelativeLayout mainRelativeLayout;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -153,6 +163,45 @@ public class HomePageActivity extends Activity implements OnClickListener,
 				HTTPRequest.URLTYPE_EXTERNAL);
 	}
 
+	private SelectedItemInterface itemClickListner = new SelectedItemInterface() {
+
+		@Override
+		public void onCategorySelect(int categoryId) {
+			// TODO Auto-generated method stub
+			Toast.makeText(activity, "" + categoryId, 1).show();
+
+			pCategoryList = new ArrayList<ProjectBean>();
+
+			for (int i = 0; i < GetAllData.getInstance().getProjects().size(); i++) {
+
+				for (int j = 0; j < GetAllData.getInstance().getProjects()
+						.get(i).getpCategories().size(); j++) {
+
+					if (GetAllData.getInstance().getProjects().get(i)
+							.getpCategories().get(j).category_id == categoryId)
+						pCategoryList.add(GetAllData.getInstance()
+								.getProjects().get(i));
+				}
+
+			}
+			if (pCategoryList.size() > 0) {
+				mainList.setVisibility(View.VISIBLE);
+				homeScreenAdapter = new HomeScreenAdapter(activity);
+				mainList.setAdapter(homeScreenAdapter);
+				homeScreenAdapter.setList(pCategoryList);
+				mainRelativeLayout.setVisibility(View.GONE);
+
+			} else {
+				mainRelativeLayout.setVisibility(View.VISIBLE);
+				mainList.setVisibility(View.INVISIBLE);
+
+				Toast.makeText(getApplicationContext(),
+						"Sorry no project found.", 1).show();
+			}
+
+		}
+	};
+
 	@SuppressLint("NewApi")
 	private void setLayout() {
 		// TODO Auto-generated method stub
@@ -168,6 +217,9 @@ public class HomePageActivity extends Activity implements OnClickListener,
 
 		menuView = new MenuActivity(this, scrollView, menuView, menuOut);
 		teamView = inflater.inflate(R.layout.home_page_activity, null);
+		mainList = (ListView) teamView.findViewById(R.id.homepage_list);
+		mainRelativeLayout = (RelativeLayout) teamView
+				.findViewById(R.id.main_layout);
 
 		setContentView(scrollView);
 		ImageButton btnSlide = (ImageButton) teamView
@@ -176,7 +228,7 @@ public class HomePageActivity extends Activity implements OnClickListener,
 				.findViewById(R.id.homepage_side_list);
 
 		btnSlide.setOnClickListener(new ClickListenerForScrolling(scrollView,
-				menuView, menuOut, false));
+				menuView, false, false));
 
 		final View[] children = new View[] { menuView, teamView };
 		int scrollToViewIdx = 1;
@@ -189,6 +241,9 @@ public class HomePageActivity extends Activity implements OnClickListener,
 		EditText etSeachCategories = (EditText) menuView
 				.findViewById(R.id.search_categories_edittext);
 		etSeachCategories.addTextChangedListener(addTextListner);
+		// menuOut = false;
+		sideItemList.setOnItemClickListener(new ClickListenerForScrolling(
+				scrollView, menuView, true, true, itemClickListner));
 
 	}
 
@@ -229,6 +284,8 @@ public class HomePageActivity extends Activity implements OnClickListener,
 			if (getDataparser.getStaus()) {
 
 				adapter.setList(GetAllData.getInstance().getCategories());
+
+				GetAllData.getInstance().getProjects();
 
 			}
 
