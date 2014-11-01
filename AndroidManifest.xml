@@ -88,6 +88,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/RightToLeftTheme" >
         </activity>
+          <activity
+            android:name="com.vinfotech.main.ProjectScreenActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RightToLeftTheme" >
+        </activity>
+        
     </application>
 
 </manifest>

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.vinfotech.demoapp.R;
@@ -20,6 +21,7 @@ public class ProjectDetailActivity extends Activity implements OnClickListener {
 	private TextView projectTittle, platform, projectDetail;
 	private ProjectBean bean;
 	private ImageButton btnSlide;
+	private RelativeLayout headerLayout;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,8 @@ public class ProjectDetailActivity extends Activity implements OnClickListener {
 		platform = (TextView) findViewById(R.id.platform);
 		projectDetail = (TextView) findViewById(R.id.project_detail);
 		btnSlide = (ImageButton) findViewById(R.id.left_ib);
+		headerLayout = (RelativeLayout) findViewById(R.id.mainRelativeLayout);
+		headerLayout.setOnClickListener(this);
 
 	}
 
@@ -66,7 +70,11 @@ public class ProjectDetailActivity extends Activity implements OnClickListener {
 		case R.id.left_ib:
 			this.finish();
 			break;
-
+		case R.id.mainRelativeLayout:
+			Intent pScreenIntent = new Intent(ProjectDetailActivity.this,
+					ProjectScreenActivity.class);
+			startActivity(pScreenIntent);
+			break;
 		default:
 			break;
 		}

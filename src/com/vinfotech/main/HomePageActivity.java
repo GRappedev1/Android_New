@@ -233,9 +233,8 @@ public class HomePageActivity extends Activity implements OnClickListener,
 
 					pDetailIntent = new Intent(HomePageActivity.this,
 							ProjectDetailActivity.class);
-
 				pDetailIntent.putExtra("object", pCategoryList.get(position));
-				
+
 				startActivity(pDetailIntent);
 
 			}
@@ -325,5 +324,30 @@ public class HomePageActivity extends Activity implements OnClickListener,
 		public void afterTextChanged(Editable editable) {
 		}
 	};
+	private final TextWatcher searchTextListner = new TextWatcher() {
 
+		@Override
+		public void onTextChanged(final CharSequence search, int arg1,
+				int arg2, int arg3) {
+			reloadHandler.removeCallbacksAndMessages(null);
+			reloadHandler.postDelayed(new Runnable() {
+
+				@Override
+				public void run() {
+					// addFriendAdapter.setFilter(search.toString().trim());
+					adapter.getFilter().filter(
+							search.toString().trim().toLowerCase());
+				}
+			}, 400);
+		}
+
+		@Override
+		public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
+				int arg3) {
+		}
+
+		@Override
+		public void afterTextChanged(Editable editable) {
+		}
+	};
 }
